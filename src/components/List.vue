@@ -4,7 +4,7 @@
         <div class="list-item-wrapper" v-if="temporaryList.length">
             <div v-for="user of temporaryList" :key="user.id" class="item-inner">
                 <div class="image-wrapper">
-                    <img :src="user.avatar_url" class="avatar-img" />
+                    <img :src="user.avatar_url ? user.avatar_url : require('@/assets/duck.png')" class="avatar-img" />
                 </div>
                 <span class="inner-username" @click="moveToUser(user.login)">{{user.login}}</span>
                 <div class="link">
